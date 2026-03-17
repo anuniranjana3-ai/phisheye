@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FishEye | Advanced Threat Detection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cyber-bg">
+      <div class="grid-layer"></div>
+      <div class="particles"></div>
+      <div class="waves"></div>
+    </div>
+
+    <header class="navbar">
+      <div class="brand" onclick="scrollToSection('hero')">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logoGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#8f6cff" />
+                <stop offset="100%" stop-color="#3decff" />
+              </linearGradient>
+            </defs>
+            <path d="M50 8c23.196 0 42 24 42 42s-18.804 42-42 42S8 73.196 8 50 26.804 8 50 8z" stroke="url(#logoGradient)" stroke-width="3" opacity="0.30"/>
+            <path d="M20 50c12-20 30-24 30-24s18 4 30 24c-12 20-30 24-30 24s-18-4-30-24z" stroke="url(#logoGradient)" stroke-width="3" fill="none" />
+            <path d="M50 38a12 12 0 1 1 0 24 12 12 0 0 1 0-24z" stroke="url(#logoGradient)" stroke-width="3" fill="rgba(143,108,255,.1)" />
+            <path d="M42 42h16v16H42z" fill="rgba(255,255,255,0.1)" />
+            <path d="M30 28L70 72" stroke="url(#logoGradient)" stroke-width="2" opacity="0.25" />
+          </svg>
+          <span class="logo-scan"></span>
+        </div>
+        <span class="brand-text">FishEye</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#login" class="nav-link">Login</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#learn" class="nav-link">Learn</a>
+      </nav>
+      <button class="toggle-menu" aria-label="Toggle navigation">☰</button>
+    </header>
+
+    <main class="page">
+      <section id="hero" class="hero-section">
+        <div class="content">
+          <h1 class="hero-title">ADVANCED THREAT DETECTION</h1>
+          <p class="hero-subtitle">AI-powered real-time phishing and malicious URL detection</p>
+          <div class="url-card">
+            <div class="input-wrap">
+              <input id="targetUrl" type="text" autocomplete="off" placeholder="Enter target URL..." />
+            </div>
+            <button id="analyzeBtn" class="btn btn-primary">ANALYZE</button>
+          </div>
+          <p class="hero-hint">Inspect URLs, network traffic, and cyber threats instantly.</p>
+        </div>
+      </section>
+
+      <section id="results" class="results-section hidden">
+        <div class="result-heading">
+          <h2>Analysis Outcome</h2>
+          <p>Threat score backed by FishEye AI risk engine</p>
+        </div>
+        <div class="result-center">
+          <div class="circle-outer">
+            <svg class="progress-ring" width="220" height="220">
+              <circle class="progress-bg" cx="110" cy="110" r="96" />
+              <circle id="progressCircle" class="progress-value" cx="110" cy="110" r="96" />
+            </svg>
+            <div class="progress-label">
+              <span id="resultScore">0%</span>
+              <small id="resultStatus">Analyzing...</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="details-grid">
+          <div class="glass-card secure-card">
+            <h3>✔ Secure Indicators</h3>
+            <ul id="secureList" class="indicator-list"></ul>
+          </div>
+          <div class="glass-card risk-card">
+            <h3>⚠ Risk Indicators</h3>
+            <ul id="riskList" class="indicator-list"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="login" class="section page-section">
+        <h2>Login</h2>
+        <p>Access your FishEye analyst portal.</p>
+        <div class="glass-panel">
+          <form id="loginForm" class="login-form" onsubmit="return false;">
+            <label class="float-label">
+              <input type="email" required />
+              <span>Email</span>
+            </label>
+            <label class="float-label">
+              <input type="password" required />
+              <span>Password</span>
+            </label>
+            <button class="btn btn-primary">Sign In</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="about" class="section page-section">
+        <h2>About FishEye</h2>
+        <p>Our mission: protect enterprises with predictive phishing defense and AI-driven URL intelligence.</p>
+        <div class="info-grid">
+          <div class="glass-card">
+            <h3>Mission</h3>
+            <p>Detect and neutralize advanced social-engineering attacks in real time.</p>
+          </div>
+          <div class="glass-card">
+            <h3>Vision</h3>
+            <p>Create a world where digital threats are foresighted and stopped before impact.</p>
+          </div>
+          <div class="glass-card">
+            <h3>Value</h3>
+            <p>Trust, transparency, and innovations at the speed of modern threats.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="learn" class="section page-section">
+        <h2>Learn About Phishing</h2>
+        <p>Understand common scam patterns so you can stay one step ahead.</p>
+        <div class="learn-grid">
+          <div class="glass-card">
+            <h3>Phishing Types</h3>
+            <ul>
+              <li>Email phishing</li>
+              <li>Spear phishing</li>
+              <li>Whaling</li>
+              <li>Smishing</li>
+            </ul>
+          </div>
+          <div class="glass-card">
+            <h3>Red Flags</h3>
+            <ul>
+              <li>Urgent actions</li>
+              <li>Unverified senders</li>
+              <li>Embedded links & misspells</li>
+              <li>Mismatched domains</li>
+            </ul>
+          </div>
+          <div class="glass-card">
+            <h3>Safety Tips</h3>
+            <ul>
+              <li>Hover before click</li>
+              <li>Use MFA</li>
+              <li>Verify URLs</li>
+              <li>Report incidents</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>© 2026 FishEye Security Systems</p>
+      <div class="social-icons">
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="LinkedIn">in</a>
+        <a href="#" aria-label="GitHub">🐙</a>
+      </div>
+    </footer>
+
+    <div id="scanOverlay" class="scan-overlay hidden">
+      <div class="scan-panel">
+        <div class="scan-ring" aria-hidden="true">
+          <div class="scan-line"></div>
+          <div class="scan-wave"></div>
+          <div class="scan-wave delay"></div>
+          <div class="scan-wave delay2"></div>
+        </div>
+        <h2>Scanning URL...</h2>
+        <p>AI Engine is analyzing threat vectors and behavioral patterns...</p>
+        <div class="progress-bar"><span id="scanProgress">0%</span></div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
