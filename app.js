@@ -16,6 +16,10 @@ const circleCircumference = 2 * Math.PI * circleRadius;
 progressCircle.style.strokeDasharray = `${circleCircumference}`;
 progressCircle.style.strokeDashoffset = `${circleCircumference}`;
 
+// Initialize UI safe state
+scanOverlay.classList.add('hidden');
+resultsSection.classList.add('hidden');
+
 const unsafeKeywords = ['login', 'verify', 'bank', 'update', 'secure', 'account', 'pay', 'reset', 'confirm'];
 
 function calculateScore(url) {
