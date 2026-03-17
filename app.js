@@ -17,8 +17,13 @@ progressCircle.style.strokeDasharray = `${circleCircumference}`;
 progressCircle.style.strokeDashoffset = `${circleCircumference}`;
 
 // Initialize UI safe state
-scanOverlay.classList.add('hidden');
-resultsSection.classList.add('hidden');
+function initializeUI() {
+  scanOverlay.classList.add('hidden');
+  scanOverlay.style.display = 'none';
+  resultsSection.classList.add('hidden');
+}
+
+initializeUI();
 
 const unsafeKeywords = ['login', 'verify', 'bank', 'update', 'secure', 'account', 'pay', 'reset', 'confirm'];
 
@@ -130,6 +135,7 @@ function runScan() {
   }
 
   scanOverlay.classList.remove('hidden');
+  scanOverlay.style.display = 'grid';
   const duration = 2400;
   const start = performance.now();
 
@@ -146,6 +152,7 @@ function runScan() {
       requestAnimationFrame(update);
     } else {
       scanOverlay.classList.add('hidden');
+      scanOverlay.style.display = 'none';
       const score = calculateScore(inputUrl.value);
       showResults(score);
     }
